@@ -1,0 +1,133 @@
+.projects {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #E6F1FF 0%, #F5F9FF 100%);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-blue);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 122, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.2);
+}
+
+.project-icon-wrapper {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #F8FBFF 0%, #F0F7FF 100%);
+  border-bottom: 1px solid rgba(0, 122, 255, 0.1);
+}
+
+.project-icon {
+  font-size: 5rem;
+  color: var(--primary-blue);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.project-content {
+  padding: 2rem;
+  flex: 1;
+  background: white;
+}
+
+.project-content h3 {
+  color: var(--secondary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.project-content p {
+  color: #4A5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-tech {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: #EBF5FF;
+  color: var(--primary-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.live-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: var(--primary-blue);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.live-link:hover {
+  background: #0066FF;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-icon {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,112 @@
+.contact {
+    padding: 120px 0;
+    background: #0A192F;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact h2 {
+    font-size: 3rem;
+    color: #E6F1FF;
+    margin-bottom: 4rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #007AFF;
+    border-radius: 2px;
+  }
+      .social-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+
+      .social-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(0);
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        text-decoration: none;
+        cursor: pointer;
+        flex: 1;
+        min-width: 250px;
+        max-width: 280px;
+      }
+  .social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .social-icon {
+    font-size: 3rem;
+    color: #007AFF;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-card h3 {
+    font-size: 1.8rem;
+    color: #E6F1FF;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .social-card p {
+    font-size: 1.1rem;
+    color: #8892B0;
+  }
+  
+  @media (max-width: 768px) {
+    .social-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact h2 {
+      font-size: 2.5rem;
+    }
+    
+    .social-card {
+      padding: 2rem;
+    }
+    
+    .social-icon {
+      font-size: 2.5rem;
+    }
+    
+    .social-card h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
