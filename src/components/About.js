@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaReact, FaNode, FaLaravel } from 'react-icons/fa';
-// import { SiTypescript } from 'react-icons/si';
+import { FaReact, FaNode, FaLaravel, FaJs } from 'react-icons/fa';
+import { SiTypescript } from 'react-icons/si';
 import './About.css';
 
 const About = () => {
@@ -8,8 +8,8 @@ const About = () => {
     { name: 'React.js', icon: <FaReact />, color: '#61DAFB' },
     { name: 'Node.js', icon: <FaNode />, color: '#339933' },
     { name: 'Laravel', icon: <FaLaravel />, color: '#FF2D20' },
-    // { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
-    // { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
+    { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
+    { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
   ];
 
   return (

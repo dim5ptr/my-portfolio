@@ -1,0 +1,90 @@
+/* Desktop (default) */
+.hero, .about, .projects, .contact {
+  padding: 80px 120px;
+}
+
+/* Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .hero, .about, .projects, .contact {
+    padding: 60px 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 30px auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .hero, .about, .projects, .contact {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primary-btn, .secondary-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .about-skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+}
