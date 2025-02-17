@@ -8,7 +8,7 @@ const Contact = () => {
       icon: <FaEnvelope />,
       title: "Email",
       link: "mailto:dimasetya1836@gmail.com",
-      username: "dimasetya1836@gmail.com"
+      username: "dimasetya1836"
     },
     {
       icon: <FaLinkedin />,
