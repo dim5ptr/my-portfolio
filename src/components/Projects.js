@@ -8,6 +8,7 @@ const Projects = () => {
       title: "Movie App",
       description: "A modern movie application built with React.js that allows users to browse and search movies. Features include movie details, ratings, and responsive design.",
       icon: <FaFilm className="project-icon" />,
+      // icon: <img src="/film-slate.png" alt="Movie App Icon" className="project-icon" />,
       liveLink: "https://movie-app-ivory-two-95.vercel.app/",
       tech: ["React.js", "API Integration", "Responsive Design"]
     },
@@ -15,8 +16,9 @@ const Projects = () => {
       title: "Gallery App",
       description: "An elegant gallery application showcasing image management capabilities. Users can view, upload, and organize images in a beautiful interface.",
       icon: <FaImages className="project-icon" />,
+      // icon: <img src="/galery-icon.png" alt="Gallery App Icon" className="project-icon" />,
       liveLink: "https://galery-app-eight.vercel.app/",
-      tech: ["Ionic", "Image Processing", "Modern UI"]
+      tech: ["Ionic", "Image Processing"]
     }
   ];
 
