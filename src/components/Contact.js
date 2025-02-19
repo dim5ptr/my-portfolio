@@ -1,8 +1,18 @@
 import React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaEnvelope, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  }, []);
   const socialLinks = [
     {
       icon: <FaEnvelope />,
@@ -32,9 +42,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
-      <div className="contact-container">
-        <h2>Get In Touch</h2>
-        <div className="social-grid">
+      <div className="contact-container" >
+        <h2 data-aos="fade-up">Get In Touch</h2>
+        <div className="social-grid" data-aos="fade-up">
           {socialLinks.map((social, index) => (
             <a 
               href={social.link} 

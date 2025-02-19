@@ -1,5 +1,6 @@
 .about {
-  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  background: var(--background);
+  color: var(--text);
   position: relative;
   padding: 4rem 0;
   overflow: hidden;
@@ -43,6 +44,7 @@
 }
 
 .about-text p {
+  text-align: justify;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #ffffff;
@@ -188,22 +190,131 @@
   }
 }
 
-@media (max-width: 968px) {
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) {
+  .profile-image::before {
+    width: 100%;
+  }
+  
+  .about-container {
+    padding: 0 1.5rem;
+  }
+
   .about-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
-}
 
-@media (max-width: 576px) {
   .skill-card {
     padding: 1.5rem;
   }
 
   .skill-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
+
+/* Mobile Responsive (< 768px) */
+/* Base styles tetap sama */
+
+/* Mobile Responsive (< 768px) */
+@media (max-width: 768px) {
+  
+  .about {
+    padding: 2rem 0;
+  }
+
+  .about-container {
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .skills-section {
+    margin-top: 2rem;
+  }
+
+  .skills-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .skill-card {
+    padding: 0.8rem;
+  }
+
+  .skill-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Mobile Responsive (< 480px) */
+@media (max-width: 480px) {
+  .profile-image::before {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-card {
+    padding: 0.6rem;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+}
+
+

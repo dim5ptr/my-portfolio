@@ -1,8 +1,19 @@
 import React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaExternalLinkAlt, FaFilm, FaImages } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  }, []);
+
   const projects = [
     {
       title: "Movie App",
@@ -24,8 +35,8 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
-      <div className="projects-container">
-        <h2>Featured Projects</h2>
+      <div className="projects-container" data-aos="fade-up">
+        <h2>My Projects</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div className="project-card" key={index}>

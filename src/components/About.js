@@ -1,9 +1,19 @@
 import React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaReact, FaNode, FaLaravel, FaJs } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
 import './About.css';
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  }, []);
   const skills = [
     { name: 'React.js', icon: <FaReact />, color: '#61DAFB' },
     { name: 'Node.js', icon: <FaNode />, color: '#339933' },
@@ -14,8 +24,10 @@ const About = () => {
 
   return (
     <section id="about" className="about">
-      <div className="about-container">
+      <div className="about-container" data-aos="fade-up">
+       
         <div className="about-content">
+         
           <div className="about-text">
             <h2>About Me</h2>
             <p>I'm a Full Stack Developer specializing in modern web technologies. My expertise spans both frontend and backend development, allowing me to create complete web solutions.</p>
@@ -27,7 +39,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="skills-section">
+        
+        <div className="skills-section" data-aos="fade-up">
           <h3>Technical Expertise</h3>
           <div className="skills-grid">
             {skills.map((skill, index) => (
