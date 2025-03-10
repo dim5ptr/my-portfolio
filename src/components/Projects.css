@@ -1,3 +1,28 @@
+.project-card.in-progress {
+  position: relative;
+}
+
+.project-card.in-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(128, 128, 128, 0.7);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.progress-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
 .projects {
   background: var(--background);
   color: var(--text);
@@ -19,13 +44,31 @@
   font-weight: 700;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+.projects-slider-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
+.projects-grid {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+.projects-carousel {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antar card dan panah navigasi */
+}
 .project-card {
+  flex: 0 0 50%;
+  scroll-snap-align: start;
+  min-width: 300px;
   background: white;
   border-radius: 20px;
   overflow: hidden;
@@ -38,6 +81,36 @@
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 122, 255, 0.2);
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
 }
 
 .project-icon-wrapper {
@@ -117,20 +190,164 @@
   background: #0066FF;
   transform: translateY(-2px);
 }
-
-@media (max-width: 968px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+.projects-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  gap: 50px; /* Jarak antara card dan panah */
+  padding: 0 50px; /* Menambah ruang di sekitar slider */
+}
+.swiper-button-prev, 
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
 }
 
-@media (max-width: 576px) {
-  .project-content {
-    padding: 1.5rem;
-  }
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-button-prev::after, 
+.swiper-button-next::after {
+  font-size: 1rem;
+  color: white;
+}
+@media (max-width: 1024px) and (min-width: 768px) {
   
-  .project-icon {
-    font-size: 4rem;
+  .projects {
+    padding: 80px 0; /* Sesuaikan padding untuk tablet */
+  }
+
+  .projects-container {
+    padding: 0 2rem; /* Berikan padding agar tidak mepet ke batas layar */
+  }
+
+  .projects h2 {
+    font-size: 2.2rem; /* Sesuaikan ukuran font */
+    margin-bottom: 2.5rem;
+  }
+
+  .projects-carousel {
+    padding: 0 20px; /* Berikan padding pada carousel */
+  }
+
+  .project-card {
+    min-height: 350px; /* Sesuaikan tinggi card */
+    padding: 1.5rem; /* Berikan padding pada card */
+    margin: 0; /* Hilangkan margin auto */
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem; /* Sesuaikan ukuran font */
+  }
+
+  .project-content p {
+    font-size: 0.9rem; /* Sesuaikan ukuran font */
+    line-height: 1.5;
+  }
+
+  .live-link {
+    padding: 0.7rem 1.2rem; /* Sesuaikan padding tombol */
+    font-size: 0.9rem;
+  }
+
+  /* Konfigurasi Swiper untuk tablet */
+  .swiper {
+    width: 100%;
+    padding: 0 20px; /* Berikan padding pada Swiper */
+  }
+
+  .swiper-slide {
+    width: 50% !important; /* 2 card per slide */
+    padding: 10px; /* Berikan jarak antar card */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important; /* Tampilkan tombol navigasi */
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 1rem;
+    color: white;
+  }
+}
+@media (max-width: 576px) {
+  .projects {
+    padding: 30px 0;
+  }
+
+  .projects-container {
+    padding: 0 10px;
+    max-width: 100%; /* Pastikan container tidak melebihi lebar layar */
+  }
+
+  .projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-carousel {
+    padding: 0 10px;
+    width: 100%; /* Pastikan carousel tidak melebihi lebar layar */
+  }
+
+  .project-card {
+    width: 100%; /* Lebar card mengikuti container */
+    max-width: 100%; /* Maksimum lebar card */
+    min-height: 280px;
+    padding: 1rem;
+    margin: 0 auto; /* Pusatkan card */
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem;
+    min-height: auto;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+    min-height: auto;
+    line-height: 1.4;
+  }
+
+  .live-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Sesuaikan Swiper untuk tampilan mobile */
+  .swiper {
+    width: 100%;
+    padding: 0 10px; /* Tambahkan padding untuk menghindari overflow */
+  }
+
+  .swiper-slide {
+    width: 100% !important; /* Pastikan slide tidak melebihi lebar layar */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none; /* Sembunyikan navigasi pada mobile jika tidak diperlukan */
   }
 }

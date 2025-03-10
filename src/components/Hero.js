@@ -16,7 +16,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-content">
         <h1 className="animate-text">Hi, I'm Dimas Putra </h1>
-        <h2 className="animate-text-delay-1">Fullstack Developer</h2>
+        <h2 className="animate-text-delay-1">Frontend Developer</h2>
         <p className="animate-text-delay-2">I craft responsive websites where technology meets creativity</p>
         <div className="hero-buttons animate-text-delay-3">
           <button 
