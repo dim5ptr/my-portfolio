@@ -23,7 +23,10 @@ const About = () => {
     { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
     { name: 'Blazor', icon: <SiBlazor />, color: '#512BD4', inProgress: true }, // Blazor dengan status belajar
   ];
-
+  const handleDownloadCV = () => {
+    // Ganti dengan URL CV Anda
+    window.open('/cv2.pdf', '_blank');
+  };
   return (
     <section id="about" className="about">
       <div className="about-container" data-aos="fade-up">
@@ -38,6 +41,9 @@ const About = () => {
               Saya mahir dalam membangun aplikasi yang andal menggunakan <strong>React.js</strong> untuk frontend, serta <strong>Node.js</strong> dan <strong>Laravel</strong> untuk pengembangan frontend maupun backend. 
               Saat ini, saya sedang mempelajari <strong>Blazor</strong> guna memperluas pengetahuan dan keterampilan saya di bidang pengembangan web.
               </p>
+              <button className="cv-button" onClick={handleDownloadCV}>
+              Lihat CV
+              </button>
           </div>
           <div className="profile-image">
             <img src="icon.jpg" alt="Profile" />
